@@ -1,0 +1,12 @@
+version: '2'
+services:
+  web:
+    build: .
+    ports:
+     - "7554:5000"
+    volumes:
+     - .:/code
+    depends_on:
+     - redis
+  redis:
+    image: redis
